@@ -1,5 +1,6 @@
 ﻿import { Theme } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
 
 export function ClientThemeProvider({ children }: { children: React.ReactNode }) {
-    return <Theme>{children}</Theme>;
+    return <Theme appearance="dark">{children}</Theme>;
 }
