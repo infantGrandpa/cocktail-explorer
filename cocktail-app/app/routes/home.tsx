@@ -1,5 +1,5 @@
 import type {Route} from "./+types/home";
-import CocktailGrid from "~/home/home";
+import CocktailGrid from "~/components/CocktailGrid";
 import NavBar from "~/components/NavBar";
 
 export function meta({}: Route.MetaArgs) {
