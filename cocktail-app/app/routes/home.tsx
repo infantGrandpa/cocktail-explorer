@@ -1,6 +1,5 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 import type {Route} from "./+types/home";
+import CocktailGrid from "~/home/home";
 import NavBar from "~/components/NavBar";
 
 export function meta({}: Route.MetaArgs) {
@@ -11,10 +10,10 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Welcome />;
     return (
         <>
             <NavBar/>;
+            <CocktailGrid/>;
         </>
     )
 }
