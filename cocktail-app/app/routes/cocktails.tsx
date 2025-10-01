@@ -1,7 +1,8 @@
 ﻿import {useLoaderData} from "react-router";
-import {Heading} from "@radix-ui/themes";
+import {Container, Heading} from "@radix-ui/themes";
+import CocktailCard from "~/components/CocktailCard";
 
-interface Cocktail {
+export interface Cocktail {
     idDrink: string;
     strDrink: string;
     strTags: string;
@@ -23,9 +24,18 @@ export async function loader() {
 
 }
 
-export default function Cocktails() {
+const Cocktails = () => {
     const cocktails: Cocktail[] | null = useLoaderData<typeof loader>()
-    const cocktailName: string = cocktails ? cocktails[0].strDrink : "No Cocktail Found!";
+
+    const mainCocktail: Cocktail | null = cocktails ? cocktails[0] : null;
 
     return (<Heading as="h2">{cocktailName}</Heading>)
 }
+    return (
+        <Container>
+            <CocktailCard cocktail={mainCocktail}/>
+        </Container>
+    )
+};
+
+export default Cocktails;
