@@ -18,17 +18,13 @@ interface CocktailApiResponse {
 export async function loader() {
     console.log("Sending request...")
     const response = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=mojito")
-    const data: CocktailApiResponse = await response.json();
-    console.log(data)
+    const data: CocktailApiResponse = (await response.json()) as CocktailApiResponse;
     return data.drinks;
 
 }
 
 export default function Cocktails() {
     const cocktails: Cocktail[] | null = useLoaderData<typeof loader>()
-    console.log("cocktails")
-    console.log(cocktails)
-
     const cocktailName: string = cocktails ? cocktails[0].strDrink : "No Cocktail Found!";
 
     return (<Heading as="h2">{cocktailName}</Heading>)
