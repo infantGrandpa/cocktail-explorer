@@ -1,5 +1,6 @@
 import type {Route} from "./+types/home";
-import {Heading} from "@radix-ui/themes";
+import {Button, Container, Heading} from "@radix-ui/themes";
+import {Link} from "react-router";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -10,6 +11,11 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
     return (
-        <Heading>"Hello!"</Heading>
+        <Container>
+            <Heading>"Hello!"</Heading>
+            <Button>
+                <Link to="/cocktails">Cocktails (Just Mojito Really)</Link>
+            </Button>
+        </Container>
     )
 }
