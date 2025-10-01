@@ -29,8 +29,10 @@ const Cocktails = () => {
 
     const mainCocktail: Cocktail | null = cocktails ? cocktails[0] : null;
 
-    return (<Heading as="h2">{cocktailName}</Heading>)
-}
+    if (!mainCocktail) {
+        return <Heading as="h1">No Cocktail Found!</Heading>
+    }
+
     return (
         <Container>
             <CocktailCard cocktail={mainCocktail}/>
