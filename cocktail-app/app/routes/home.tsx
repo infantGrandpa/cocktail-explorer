@@ -1,5 +1,5 @@
 import type {Route} from "./+types/home";
-import NavBar from "~/components/NavBar";
+import {Heading} from "@radix-ui/themes";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -10,8 +10,6 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
     return (
-        <>
-            <NavBar/>
-        </>
+        <Heading>"Hello!"</Heading>
     )
 }
